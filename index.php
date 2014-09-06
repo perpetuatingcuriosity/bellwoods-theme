@@ -51,5 +51,5 @@ get_header(); ?>
 	</div> <!-- /.fullBleed -->
 </div> <!-- .container -->
 
-<?php get_sidebar(); ?>
+
 <?php get_footer(); ?>

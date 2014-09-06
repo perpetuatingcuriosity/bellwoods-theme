@@ -151,6 +151,47 @@ nav.main-navigation {
 		}
 	}
 }
+//----------------------------------------------------------------
+//MEDIA QUIERIES
+
+
+@media all and (max-width: 790px) {
+	.site-branding {
+		@include column(12);
+		.site-logo {
+			img {
+				width: 23px;
+			}
+		}
+	}
+	.menu-container {
+		float: left;
+	}
+	nav.main-navigation {
+		clear:none;
+		@include column(12);
+		.menu-main-menu-container {
+			float: left;
+			border: 1px solid #ddd;
+				&:first-child {
+					border-left: none;
+				}
+		}
+		ul {
+			li a {
+				
+				padding: 5px 15px;
+				margin: 0;
+				border-left: 1px solid #eee;
+				color: #bbb;
+				&:hover {
+					color: #444;
+				}
+			}
+		}
+	}
+	
+}
 
 
 //----------------------------------------------------------------
@@ -166,6 +207,7 @@ nav.main-navigation {
 	section {
 		@include column(4);
 		figure {
+			cursor: pointer;
 			text-align:center;
 			width: 20%;
 			min-width: 65px;
@@ -348,6 +390,30 @@ nav.main-navigation {
 		margin: 0;
 	}	
 }
+
+//----------------------------------------------------------------
+//MEDIA QUERIES
+
+@media all and (max-width: 900px) {
+	.footerSidebar {
+		@include column(6);
+	}
+
+	#footer-sidebar1 {
+		display:none;
+	}
+	#footer-sidebar2 {
+		display:none;
+	}
+}
+
+@media all and (max-width: 640px) {
+	.footerSidebar {
+		@include column(12);
+	}
+}
+
+
 
 //----------------------------------------------------------------
 //BLOG CONTENT (content.php)

@@ -21,6 +21,9 @@
 <link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
 <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
+<!-- Favicon -->
+<link rel="shortcut icon" href="<?php echo bloginfo( 'template_directory' ); ?>/images/favicon.ico" />
+
 <?php wp_head(); ?>
 </head>
 
