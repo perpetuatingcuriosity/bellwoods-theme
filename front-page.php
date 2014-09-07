@@ -16,7 +16,6 @@ Template Name: Home Page
 
  get_header(); ?>
 
-
 <?php echo do_shortcode("[metaslider id=107]"); ?>
 
 <div class="fullBleed contentPreview">
@@ -24,28 +23,34 @@ Template Name: Home Page
 		
 		<section>
 			<figure>
+				<a href="#">
 				<img src="<?php bloginfo('template_directory'); ?>/images/available-pub.svg">
+				</a>
 			</figure>
 			<figcaption>
-				<h3>Brewpub</h3>
+				<h3><a href="#">Brewpub</a></h3>
 				<p>For all brews currently on tap and on location at Ossington and Queen</p>
 			</figcaption>
 		</section>
 		<section>
 			<figure>
+				<a href="#">
 				<img src="<?php bloginfo('template_directory'); ?>/images/available-bottleshop.svg">
+				</a>
 			</figure>
 			<figcaption>
-				<h3>Bottleshop</h3>
+				<h3><a href="#">Bottleshop</a></h3>
 				<p>What’s currently available at our bottleshop. Take home your favourites.</p>
 			</figcaption>
 		</section>
 		<section>
 			<figure>
+				<a href="#">
 				<img src="<?php bloginfo('template_directory'); ?>/images/not-available.svg">
+				</a>
 			</figure>
 			<figcaption>
-				<h3>Beer Archives</h3>
+				<h3><a href="#">Beer Archives</a></h3>
 				<p>Still looking for a brew? Check out the archives for our full range of product</p>
 			</figcaption>
 		</section>

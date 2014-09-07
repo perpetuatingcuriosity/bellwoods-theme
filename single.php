@@ -7,27 +7,31 @@
 
 get_header(); ?>
 
-	<p>THIS IS SINGLE PAGE</p>
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+<div class="fullBleed blogPage singlePage">
+	<div class="container">	
+		<div class="blogSectionHead">
+			<h3 class="blogBack"><a href="<?php echo bloginfo('url')?>" rel="home">← Blog Main</a></h3>
+		</div>
+		<main id="singlePost">
+			<?php while ( have_posts() ) : the_post(); ?>
 
-		<?php while ( have_posts() ) : the_post(); ?>
+				<?php get_template_part( 'content', 'single' ); ?>
 
-			<?php get_template_part( 'content', 'single' ); ?>
+				<?php pcurio_post_nav(); ?>
 
-			<?php pcurio_post_nav(); ?>
+				<?php
+					// If comments are open or we have at least one comment, load up the comment template
+					if ( comments_open() || '0' != get_comments_number() ) :
+						comments_template();
+					endif;
+				?>
 
-			<?php
-				// If comments are open or we have at least one comment, load up the comment template
-				if ( comments_open() || '0' != get_comments_number() ) :
-					comments_template();
-				endif;
-			?>
+			<?php endwhile; // end of the loop. ?>
+		</main>
+		<?php get_sidebar(); ?>
+		</div><!-- .container -->
+	</div><!-- singlePage -->
 
-		<?php endwhile; // end of the loop. ?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

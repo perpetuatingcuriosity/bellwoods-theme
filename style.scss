@@ -40,7 +40,7 @@ $lighterBeige: #F9F4ED;
 //----------------------------------------------------------------
 
 body {
-	@include fontify (16px,400);
+	@include fontify (16px,400,1.6em);
 	color: #000;
 }
 
@@ -207,20 +207,30 @@ nav.main-navigation {
 	section {
 		@include column(4);
 		figure {
-			cursor: pointer;
+			background-color: #fff;
 			text-align:center;
 			width: 20%;
 			min-width: 65px;
 			margin: 10px auto;
-
+			min-height: 95px;
+			a {
+				float:left;
+				width:100%;
+			}
+		}
+		h3 {
+			text-transform: uppercase;
+			font-weight: 700;
+			margin-bottom: 10px;
+			a {
+				color: black;
+			}
 		}
 		figcaption {
 			text-align: center;
-			h3{
-				text-transform: uppercase;
-				font-weight: 700;
-				margin-bottom: 10px;
-			}
+			display:block;
+			padding-top:10px;
+
 			p {
 				@include fontify(1em,400);
 				padding: 0 30px;
@@ -336,7 +346,7 @@ nav.main-navigation {
 	max-width: 1400px;
 	width: 100%;
 	float: left;
-	padding: 25px;
+	padding: 5% 25px;
 	background-color: white;
 }
 
@@ -346,7 +356,7 @@ nav.main-navigation {
 
 .footerSidebar {
 	@include column(3);
-	padding-right: 20px;
+	padding-right: 50px;
 	.textwidget {
 		@include fontify(1em,300);
 		font-family: 'Source Serif Pro';
@@ -416,12 +426,28 @@ nav.main-navigation {
 
 
 //----------------------------------------------------------------
-//BLOG CONTENT (content.php)
+//BLOG CONTENT (index.php //content.php)
 //----------------------------------------------------------------
 
 .fullBleed.blogPage {
 	background-color: $lighterBeige;
+	.container {
+	}
+	#secondary {
+		@include column(3.5);
+		float:left;
+		padding-left: 10px;
+		ul {
+			list-style-type: none;
+			margin: 0.5em 0 0 0;
+		}
+	}
 }
+
+#blogIndex {
+	@include column(8.5);
+}
+
 
 .post {
 	padding-bottom: 75px;
@@ -430,21 +456,26 @@ nav.main-navigation {
 }
 
 figure.featuredImage {
-	@include column(12);
+	width:100%;
 	img {
-		max-width: 70%;
+		max-width: 80%;
 	}	
 
 }
 
 .entry-title {
-	padding-top: 2em;
+	float:left;
+	width: 100%;
 }
 
 .entry-content {
+	@include fontify(1.1em,400, 1.75em);
+	margin: 0;
+	padding-top: 1em;
 	clear: none;
 	font-family: 'Source Serif Pro';
 	color: #555;
+	max-width:95%;
 	.read-more {
 		@include fontify(0.75em,700);
 		text-transform: uppercase;	
@@ -452,9 +483,83 @@ figure.featuredImage {
 
 }
 
+//----------------------------------------------------------------
+//BLOG POST CONTENT (single.php)
+//----------------------------------------------------------------
+
+.fullBleed.singlePage {
+	.container {
+		padding: 3% 5%;
+
+	}
+	.blogBack {
+		@include fontify(1em,400);
+		text-transform: uppercase;
+		padding-bottom: 10px;
+	}
+	.entry-title {
+		font-size: 2em;
+	}
+	
+	#singlePost {
+		@include column(8.5);
+	}
+	img {
+		min-width: 70%;
+		max-width: 95%;
+		height: auto;
+		padding: 4% 0;
+	}
+
+	.entry-content {
+		max-width: 95%;
+		p {
+			color: black;
+			line-height: 1.75em;
+		}
+	}
+
+}
+
+.widgetTitle {
+	text-transform: uppercase;
+}
+
+nav.navigation.post-navigation {
+	float: left;
+	width: 100%;
+}
+
+#comments {
+	width: 100%;
+	float: left;
+	margin-top: 2em;
+	code {
+		font-size: 0.75em;
+	}
+	#submit {
+		border: none;
+		box-shadow: none;
+		text-transform: uppercase;
+		font-family: 'Oswald';
+		padding: 10px 10px;
+		letter-spacing: 0.06em;
+		background-color: $logoRed;
+		color: white;
+		-webkit-font-smoothing: antialiased;
+		font-weight: 400;
+		&:hover {
+			color: $logoRed;
+			background-color: white;
+
+		}
+	}
+}
 
 
-
+//----------------------------------------------------------------
+//BEER ARCHIVE (archive-beer-archive.php)
+//----------------------------------------------------------------
 
 
 
@@ -477,7 +582,7 @@ figure.featuredImage {
 		@include column(6);
 		margin-bottom: 15px;
 		.excerpt {
-			min-height: 188px;
+			min-height: 197px;
 		}
 	}
 } 

@@ -57,6 +57,5 @@
 			);
 		?>
 
-		<?php edit_post_link( __( 'Edit', 'pcurio' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
